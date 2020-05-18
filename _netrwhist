@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/emcandrew/Dev/cwa/frontend/src'
+let g:netrw_dirhist_2='/home/emcandrew/Dev/cwa/frontend/src/MobileFilters'
+let g:netrw_dirhist_3='/home/emcandrew/Dev/cwa/frontend/src'
+let g:netrw_dirhist_4='/home/emcandrew/Dev/cwa/frontend/src/WayIn'
+let g:netrw_dirhist_5='/home/emcandrew/Dev/cwa/frontend/src/utils'
+let g:netrw_dirhist_6='/home/emcandrew/Dev/cwa/frontend/src/SearchControls'
+let g:netrw_dirhist_7='/home/emcandrew/Dev/cwa/frontend/src/FiltersBanner'
+let g:netrw_dirhist_8='/home/emcandrew/Dev/cwa/frontend/src/utils'
