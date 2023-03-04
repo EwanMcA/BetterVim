@@ -1,0 +1,69 @@
+i (insert)  r (replace)                                  c-[ (default mode)
+I (insert s.o.l)                                         v (vis mode) [V] [c-v]
+R (replace mode)
+a (insert after)                                         f (find forward) F (back)
+A (insert at e.o.l)                                      t (till forward) T (back)
+cc (replace line)                                        ; (repeat find forward)
+C (replace rest of line)         gg  (first line)        , (repeat find backward)
+cw (replace word)                c-b (page up)
+s (delete and insert)            c-u (up 1/2 page)
+o (newline below & insert)
+O (newline above & insert)              ^
+                                        k
+0 (start) ^ (1st char) b (back w)  <  h   l  >   e (eow)  w (next w)  $ (end)
+                                        j
+d (delete) dd (d line)                  v
+y (yank) yy (y line)
+x (delete char) X (x before)
+p (paste)                        c-d (down 1/2 page)
+P (paste before)                 c-f (page down)
+u (undo) c-r (redo)              G   (last line)
+. (repeat)
+gf (open file under cursor)
+% (jump to match symbol)         <x> gg (jump to line x)
+zz (centre screen)               zt (top screen)           zb (bottom screen)
+== (indent line)                 << (shift line)           >> (shift line)
+~ (toggle case)                  gU (set upper case)
+c-o (cursor back)                c-i (cursor forward)
+
+                            ### INSERT MODE ###
+
+c-t (shift line by shiftwidth)
+c-w (delete word back)
+c-u (delete line back)
+c-r<x> (insert reg <x>)
+c-r= (insert expression)
+c-l c-x (line completion) c-n (next sugg)
+
+                            ### MY STUFF ###
+
+jk (exit)                E (file mode)             ,n (clear hl)
+,h (column line)         ,hh (column line off)     :FmtLog (format log)
+,ev (edit vimrc)         ,sv (source vimrc)        ,cv (cheatsheet)
+,; (toggle line nums)    K (ag grep under cursor)  ,s (save to session)
+<c-p> (fzf files)        :Commands (fzf commands)  :Maps (fzf maps)
+
+# Buffers
+,l (ls and prompt for #)      ,d (exit buf)  ,1<x> (go to x buf)
+,f (next buf)  ,b (prev buf)  ,g (last buf)  ,G (last modified buf)
+
+# Git fugitive (:h fugitive)
+:Git (summary) [:G]
+:Git <cmd> (git cmd) [:G <cmd>]
+:Gblame (blame, use g? for help)
+:G log (log)
+:Master (master in split) :Masterdiff (master diff in split) :Masteroff (clean exit from diff)
+:Gbrowse (open object in gitlab)
+:Gdiff <obj> (diff a git object)
+
+# Surround (:h surround) b = (), B = {}, use open for "[+space", close for "["
+ds<x>    (delete x surrounding char)
+cs<x><y> (change x surrounding char to y)
+ys<x><y> (add y around motion/text-object x)
+yss<x>   (surround current line with x)
+ySS<x>   (surround current line with x and newlines)
+vS<x>    (vis. mode, wrap with x)
+
+                            ### COMMANDS ###
+:! (execute something)
+

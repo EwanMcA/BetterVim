@@ -1,0 +1,11 @@
+import React from "react";
+
+const <name> = ({}) => {
+
+};
+
+<name>.propTypes = {
+
+};
+
+export default <name>;
