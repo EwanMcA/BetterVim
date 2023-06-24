@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/emcandrew/dev/cds'
+let g:netrw_dirhist_1='/home/emcandrew/dev/cds/src/cds_core/migrations'
+let g:netrw_dirhist_0='/home/emcandrew/dev/cds/src/cds_core'
+let g:netrw_dirhist_9='/home/emcandrew/dev/cds/src'
+let g:netrw_dirhist_8='/home/emcandrew/dev/cds'
+let g:netrw_dirhist_7='/home/emcandrew/dev/cds/src/cds_core/views'
+let g:netrw_dirhist_6='/home/emcandrew/dev/cds/src/cds_core'
+let g:netrw_dirhist_5='/home/emcandrew/dev/cds/src/cds_core/views'
+let g:netrw_dirhist_4='/home/emcandrew/dev/cds/src/cds_core'
+let g:netrw_dirhist_3='/home/emcandrew/dev/cds/src/cds_core/views'

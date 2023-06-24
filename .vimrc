@@ -1,8 +1,8 @@
 let mapleader = ","
-let &t_TI = "\<Esc>[>4;2m"
-let &t_TE = "\<Esc>[>4;m"
+set t_TI= t_TE=
 
 colo elflord_custom
+set termguicolors
 
 set nocompatible
 
@@ -18,7 +18,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-obsessiont'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
+Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'elzr/vim-json'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 
@@ -73,6 +81,8 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expand
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+
 fun! FormatLog()
     set tabstop=2 softtabstop=2 expandtab shiftwidth=2
     keeppatterns %s/, /,\r/g
@@ -88,12 +98,11 @@ nnoremap <leader>ev :e ~/.vimrc<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
 nnoremap <leader>cv :vsplit ~/.vim/cheatsheet.note<CR>
 
-" AutoComplete
+" CoC AutoComplete
 let g:coc_disable_startup_warning = 1
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 "inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -151,23 +160,29 @@ command! Master Gvsplit master:%
 command! Masterdiff Gvsplit master:% | diffthis | wincmd w | diffthis | wincmd w
 command! Masteroff q | diffoff!
 command! G Git | res 20 | set winfixwidth
-command! GB Gblame
-nnoremap <leader><leader>g :Gbrowse<CR>
+command! GB Git blame
+nnoremap <leader><leader>g :GBrowse<CR>
 
+
+" CoC
+nmap <leader>j <Plug>(coc-definition)
+nmap <leader>i :call CocAction('doHover')<CR>
 
 
 " Highlights
 nnoremap <leader>n :noh<CR>
 
+
 " LEAVE INSERT
 inoremap jk <ESC>
+inoremap kk <ESC>
+inoremap jj <ESC>
 
 " Line Numbers
 nnoremap <leader>; :set invnumber<CR>
 
 " lint
 let g:ale_linters_explicit = 1
-let g:ale_change_sign_column_color = 1
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 nnoremap <leader>a :ALEToggle<CR>
@@ -204,7 +219,7 @@ nnoremap <leader><c-f> :Ag<CR>
 nnoremap <c-f> :Ag <C-R><C-W><CR>
 
 " Terminal
-nnoremap <leader>t :vert ter<CR><c-w>:vert res 100<CR><c-w>:set winfixwidth<CR>
+nnoremap <leader>t :vert ter<CR><c-w>:vert res 70<CR><c-w>:set winfixwidth<CR>
 command! -nargs=+ TER exe("vert ter ".<q-args>)
 tmap <leader>- <c-w>:vert res -20<CR>
 tmap <leader>+ <c-w>:vert res +20<CR>
@@ -233,6 +248,8 @@ tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
 " vim airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_section_y = ''
+let g:airline_section_z = 'col %{col(".")} ln %{line(".")}'
 
 " Obsession
 nnoremap <leader>s :Obsess<CR>

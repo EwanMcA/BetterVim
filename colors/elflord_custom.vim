@@ -9,21 +9,21 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let g:colors_name = "elflord"
-hi Normal		guifg=cyan			guibg=black
-hi Comment	term=bold		ctermfg=DarkCyan		guifg=#80a0ff
-hi Constant	term=underline	ctermfg=Magenta		guifg=Magenta
-hi Special	term=bold		ctermfg=DarkMagenta	guifg=Red
+let g:colors_name = "elflord_custom"
+hi Normal		guifg=#8664a8			guibg=#220022
+hi Comment	term=bold		ctermfg=DarkCyan		guifg=#0070a5
+hi Constant	term=underline	ctermfg=Magenta		guifg=#fa9457
+hi Special	term=bold		ctermfg=DarkMagenta	guifg=#5555ee
 hi Identifier term=underline	cterm=bold			ctermfg=Cyan guifg=#40ffff
-hi Statement term=bold		ctermfg=Yellow gui=bold	guifg=#aa4444
-hi PreProc	term=underline	ctermfg=LightBlue	guifg=#ff80ff
-hi Type	term=underline		ctermfg=LightGreen	guifg=#60ff60 gui=bold
-hi Function	term=bold		ctermfg=White guifg=White
+hi Statement term=bold		ctermfg=Blue gui=bold	guifg=#ed957b
+hi PreProc	term=underline	ctermfg=DarkCyan	guifg=#dc90dc
+hi Type	term=underline		ctermfg=LightGreen	guifg=LightGreen gui=bold
+hi Function	term=bold		ctermfg=White guifg=#b8d8ff
 hi Repeat	term=underline	ctermfg=White		guifg=white
-hi Operator				ctermfg=Red			guifg=Red
+hi Operator				ctermfg=Red			guifg=#d05020
 hi Ignore				ctermfg=black		guifg=bg
 hi Error	term=reverse ctermbg=Red ctermfg=White guibg=Red guifg=White
-hi Todo	term=standout ctermbg=Yellow ctermfg=Black guifg=Blue guibg=Yellow
+hi Todo	term=standout ctermbg=Yellow ctermfg=Black guifg=Blue guibg=DarkYellow
 
 " Common groups that link to default highlighting.
 " You can specify other highlighting easily.
@@ -50,6 +50,7 @@ hi link SpecialComment Special
 hi link Debug		Special
 
 " CUSTOM
-hi SignColumn ctermbg=0 guifg=red guibg=#80a0ff
+hi SignColumn ctermbg=0 guibg=#220022
 hi ALEErrorSign ctermfg=red ctermbg=0
-hi ALEError ctermfg=red ctermbg=red
+hi ALEError guibg=#662222
+hi Noise guifg=white
